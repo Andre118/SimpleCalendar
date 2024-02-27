@@ -1,0 +1,555 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:SimpleCalendar.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="650"
+             x:Class="SimpleCalendar.Views.MainView"
+             x:DataType="vm:MainViewModel"
+			 x:CompileBindings="True">
+  <Design.DataContext>
+    <!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <vm:MainViewModel />
+  </Design.DataContext>
+	
+	<Grid>
+		<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="1*"/>
+			<ColumnDefinition Width="4*"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="3*"/>
+		</Grid.RowDefinitions>	
+
+		<Border Background="#2f5cb6"/>
+		<Border Grid.Column ="1" Background="#ffffff"/>
+		<Border Grid.Row="1" Grid.ColumnSpan="2" Background="#152951"/>
+
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+
+			
+			<ScrollViewer
+				Grid.Row="0">
+				<StackPanel
+					Name="AlertPanel">
+
+
+					<Canvas
+						Width="60"
+						HorizontalAlignment="Right">
+						<Border
+							Background="White"
+							CornerRadius="10"
+							Margin="10,5,10,5"
+							Height="25"
+							Width="40">
+
+							<Button
+								Height="25"
+								Width="40"
+								HorizontalAlignment="Center"
+								ClickMode="Release"
+								Click="OpenAlertOptionsMenu_Click">
+
+								<Image
+									Height="25"
+									Width="40"
+									Source="/Assets/options-icon.png"
+									Stretch="Uniform"/>
+							</Button>
+						</Border>
+					</Canvas>
+
+					<Border
+						Background="White"
+						CornerRadius="10"
+						Margin="10,5,10,5"
+						Height="25"
+						Width="80">
+
+						<Button
+							Height="25"
+							Width="80"
+							HorizontalAlignment="Center"
+							Click="AddNewAlertButton_Click">
+
+							<Image
+								Height="20"
+								Source="/Assets/plus_icon.png"
+								Stretch="Uniform"/>
+						</Button>
+					</Border>
+
+				</StackPanel>
+			</ScrollViewer>
+
+			<ScrollViewer
+				Grid.Row="1">
+				<TextBox
+					Name="NoteTextBox"
+					LostFocus="SaveNote"
+					Background="Bisque"
+					Watermark="Add Note"
+					TextWrapping="Wrap"
+					AcceptsReturn="True"
+				/>
+			</ScrollViewer>
+			
+		</Grid>
+
+
+
+		<Grid
+			Grid.Column="1"	
+		>
+			<Grid.RowDefinitions>		
+				<RowDefinition Height="1*"/>
+				<RowDefinition Height="15*"/>
+			</Grid.RowDefinitions>
+
+			<Border Background="#2f5cb6"/>
+
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
+
+				<Grid.RowDefinitions>
+					<RowDefinition/>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+
+				<StackPanel
+					Grid.Column="6"
+					Orientation="Horizontal"
+					VerticalAlignment="Center"
+					HorizontalAlignment="Center">
+
+					<Button
+						Click="ChangeToLastMonth">
+						<Image
+							Height="20"
+							Source="/Assets/arrow_left.png"
+							Stretch="Uniform"/>
+					</Button>
+					
+					<TextBlock				
+						Name="MonthYearText"
+						Foreground="White"
+						HorizontalAlignment="Center">
+
+						Month 2012
+					</TextBlock>
+
+					<Button
+						Click="ChangeToNextMonth">
+						<Image
+							Height="20"
+							Source="/Assets/arrow_right.png"
+							Stretch="Uniform"/>
+					</Button>
+				</StackPanel>
+				
+
+
+				<TextBlock
+					Foreground="White"
+					TextAlignment="Center"
+					Grid.Row="1"
+					Grid.Column="0">
+					Monday
+				</TextBlock>
+
+				<TextBlock
+					Foreground="White"
+					TextAlignment="Center"
+					Grid.Row="1"
+					Grid.Column="1">
+					Tuesday
+				</TextBlock>
+
+				<TextBlock
+					Foreground="White"
+					TextAlignment="Center"
+					Grid.Row="1"
+					Grid.Column="2">
+					Wednesday
+				</TextBlock>
+
+				<TextBlock
+					Foreground="White"
+					TextAlignment="Center"
+					Grid.Row="1"
+					Grid.Column="3">
+					Thursday
+				</TextBlock>
+
+				<TextBlock
+					Foreground="White"
+					TextAlignment="Center"
+					Grid.Row="1"
+					Grid.Column="4">
+					Friday
+				</TextBlock>
+
+				<TextBlock
+					Foreground="White"
+					TextAlignment="Center"
+					Grid.Row="1"
+					Grid.Column="5">
+					Saturday
+				</TextBlock>
+
+				<TextBlock
+					Foreground="White"
+					TextAlignment="Center"
+					Grid.Row="1"
+					Grid.Column="6">
+					Sunday
+				</TextBlock>
+
+			</Grid>
+			
+
+
+			<Grid
+				Grid.Row="1"
+				Name="DayGrid">
+
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
+
+				<Grid.RowDefinitions>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+			</Grid>
+		</Grid>
+	</Grid>
+
+
+
+		<Grid
+			Name="AlertPopup"
+			IsEnabled="False"
+			IsVisible="False">
+
+			<TextBlock
+				Background="Black"
+				Opacity="0.6">
+			</TextBlock>
+
+
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="1*"/>
+					<RowDefinition Height="2*"/>
+					<RowDefinition Height="1*"/>
+				</Grid.RowDefinitions>
+
+
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="1*"/>
+					<ColumnDefinition Width="1*"/>
+					<ColumnDefinition Width="1*"/>
+				</Grid.ColumnDefinitions>
+
+
+				<Grid
+					Grid.Row="1"
+					Grid.Column="1">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="80"/>
+						<RowDefinition Height="70"/>
+						<RowDefinition Height="60"/>
+					</Grid.RowDefinitions>
+
+					<Border
+						Grid.Row="0"
+						Background="CornflowerBlue">		
+					</Border>
+
+					<TextBlock
+						Padding="10"
+						FontSize="15"
+						Grid.Row="0"
+						HorizontalAlignment="Left"
+						xml:space="preserve"
+						Text="{Binding AlertDescription}">
+
+					</TextBlock>
+					
+					<Border
+						Padding="10"
+						Grid.Row="1"
+						Background="AliceBlue"
+						Height="">
+						
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition/>
+								<ColumnDefinition/>
+							</Grid.ColumnDefinitions>
+
+
+
+
+							<StackPanel
+								Orientation="Horizontal"
+								Grid.Column="0">
+
+								<TextBlock
+									Grid.Column="0"
+									Padding="0, 0, 10, 0"
+									VerticalAlignment="Center"
+									FontSize="30">
+									Hour:
+								</TextBlock>
+
+								<ComboBox
+									Name="HourComboBox"
+									HorizontalAlignment="Center"
+									VerticalAlignment="Center"
+									Background="White"
+									SelectedItem="0"/>
+							</StackPanel>
+
+							<StackPanel
+								Orientation="Horizontal"
+								Grid.Column="1">
+								<TextBlock
+									Padding="0, 0, 10, 0"
+									VerticalAlignment="Center"
+									FontSize="30">
+									Minute:
+								</TextBlock>
+
+								<ComboBox
+									Name="MinuteComboBox"
+									HorizontalAlignment="Center"
+									VerticalAlignment="Center"
+									Background="White"/>
+							</StackPanel>
+						</Grid>	
+					</Border>
+
+					<Border
+						Height="50"
+						VerticalAlignment="Top"
+						Grid.Row="2"
+						Background="AliceBlue">
+
+						<TextBox
+						Name="AlertNameText"
+						Margin="10"
+						Watermark="{Binding AlertNameMenuString}"/>
+						
+					</Border>
+
+					<Border					
+						Margin="0,10,0,80"
+						Grid.Column="1"
+						Grid.Row="0"
+						HorizontalAlignment="Right">
+
+						<Button
+							Name="ExitButton"
+							Margin="10"
+							Height="35"
+							Width="40"
+							Click="CloseAlertPopup_Click">
+
+							<Image
+								Height="20"
+								Source="/Assets/exit_icon.png"
+								Stretch="Fill"/>
+							
+						</Button>
+
+					</Border>
+
+					<Border
+						Margin="0,30,0,0"
+						Grid.Column="1"
+						Grid.Row="0"
+						HorizontalAlignment="Right">
+
+
+						<Button
+							Name="AlertEditButton"
+							Click="EditAlert_Click"
+							Margin="10"
+							Height="35"
+							Width="40">
+
+							<Image
+								Height="20"
+								Source="/Assets/edit_icon.png"
+								Stretch="Uniform"/>
+						</Button>
+
+					</Border>
+
+					<Border
+						Margin="0,30,0,0"
+						Grid.Column="1"
+						Grid.Row="0"
+						HorizontalAlignment="Right">
+
+
+						<Button
+							Name="AlertSaveButton"
+							Click="AlertSave_Click"
+							Margin="10"
+							Height="35"
+							Width="40">
+
+							<Image
+								Height="20"
+								Source="/Assets/save-image-icon-0.jpg"
+								Stretch="Uniform"/>
+							
+						</Button>
+					</Border>
+				</Grid>
+			</Grid>
+		</Grid>
+
+
+		<Grid
+			Name="AlertOptionsMenu"
+			IsEnabled="False"
+			IsVisible="False">
+
+			<TextBlock
+				Background="Black"
+				Opacity="0.6">
+			</TextBlock>
+
+
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="1*"/>
+					<RowDefinition Height="2*"/>
+					<RowDefinition Height="1*"/>
+				</Grid.RowDefinitions>
+
+
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="1*"/>
+					<ColumnDefinition Width="1*"/>
+					<ColumnDefinition Width="1*"/>
+				</Grid.ColumnDefinitions>
+				
+				<Grid
+					Grid.Row="1"
+					Grid.Column="1">
+
+					<Grid.RowDefinitions>
+						<RowDefinition Height="1*"/>
+						<RowDefinition Height="7*"/>
+					</Grid.RowDefinitions>
+					
+
+					
+					<Border					
+						Padding="15, 10, 10, 10"
+						Grid.Row="0"
+						Background="CornflowerBlue">
+
+						<TextBlock
+							FontSize="20"
+							VerticalAlignment="Center">
+							Options:
+						</TextBlock>
+						
+					</Border>
+
+					<Border
+						Grid.Row="0"
+						CornerRadius="10"
+						Margin="10,5,10,5">
+
+						<Button
+							Height="25"
+							Width="40"
+							HorizontalAlignment="Right"
+							Click="CloseAlertOptionsMenu_Click">
+
+							<Image
+								Height="20"
+								Source="/Assets/plus_icon.png"
+								Stretch="Uniform"/>
+						</Button>
+					</Border>
+					
+					<Border
+						Grid.Row="1"
+						Background="AliceBlue">
+					</Border>
+
+					
+					<Border						
+						Padding="15"
+						Grid.Row="1">
+						
+						<UniformGrid
+							Columns="2"
+							Rows="10">
+
+							<TextBlock
+								VerticalAlignment="Center">
+								Alerts Active
+							</TextBlock>
+
+							<CheckBox
+								Name="AlertsActiveCheckBox"
+								HorizontalAlignment="Left"
+								Click="ToggleAlertsActive">
+							</CheckBox>
+
+
+						</UniformGrid>
+					</Border>
+
+				</Grid>
+					
+					
+				<Border
+					Grid.Row="1"
+					Grid.Column="1">
+
+
+
+
+				</Border>
+			</Grid>
+		</Grid>
+
+
+	</Grid>
+
+</UserControl>

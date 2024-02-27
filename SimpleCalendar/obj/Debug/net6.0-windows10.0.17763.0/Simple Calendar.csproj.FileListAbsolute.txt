@@ -1,0 +1,18 @@
+J:\Uni\Random Programming Stuff\C# app tutorial\SimpleCalendar\SimpleCalendar\bin\Debug\net6.0-windows10.0.17763.0\SimpleCalendar.deps.json
+J:\Uni\Random Programming Stuff\C# app tutorial\SimpleCalendar\SimpleCalendar\bin\Debug\net6.0-windows10.0.17763.0\SimpleCalendar.dll
+J:\Uni\Random Programming Stuff\C# app tutorial\SimpleCalendar\SimpleCalendar\bin\Debug\net6.0-windows10.0.17763.0\SimpleCalendar.pdb
+J:\Uni\Random Programming Stuff\C# app tutorial\SimpleCalendar\SimpleCalendar\obj\Debug\net6.0-windows10.0.17763.0\Simple Calendar.csproj.AssemblyReference.cache
+J:\Uni\Random Programming Stuff\C# app tutorial\SimpleCalendar\SimpleCalendar\obj\Debug\net6.0-windows10.0.17763.0\Avalonia\Resources.Inputs.cache
+J:\Uni\Random Programming Stuff\C# app tutorial\SimpleCalendar\SimpleCalendar\obj\Debug\net6.0-windows10.0.17763.0\Avalonia\resources
+J:\Uni\Random Programming Stuff\C# app tutorial\SimpleCalendar\SimpleCalendar\obj\Debug\net6.0-windows10.0.17763.0\Simple Calendar.GeneratedMSBuildEditorConfig.editorconfig
+J:\Uni\Random Programming Stuff\C# app tutorial\SimpleCalendar\SimpleCalendar\obj\Debug\net6.0-windows10.0.17763.0\Simple Calendar.AssemblyInfoInputs.cache
+J:\Uni\Random Programming Stuff\C# app tutorial\SimpleCalendar\SimpleCalendar\obj\Debug\net6.0-windows10.0.17763.0\Simple Calendar.AssemblyInfo.cs
+J:\Uni\Random Programming Stuff\C# app tutorial\SimpleCalendar\SimpleCalendar\obj\Debug\net6.0-windows10.0.17763.0\Simple Calendar.csproj.CoreCompileInputs.cache
+J:\Uni\Random Programming Stuff\C# app tutorial\SimpleCalendar\SimpleCalendar\obj\Debug\net6.0-windows10.0.17763.0\Avalonia\references
+J:\Uni\Random Programming Stuff\C# app tutorial\SimpleCalendar\SimpleCalendar\obj\Debug\net6.0-windows10.0.17763.0\Avalonia\original.dll
+J:\Uni\Random Programming Stuff\C# app tutorial\SimpleCalendar\SimpleCalendar\obj\Debug\net6.0-windows10.0.17763.0\Avalonia\original.pdb
+J:\Uni\Random Programming Stuff\C# app tutorial\SimpleCalendar\SimpleCalendar\obj\Debug\net6.0-windows10.0.17763.0\Avalonia\original.ref.dll
+J:\Uni\Random Programming Stuff\C# app tutorial\SimpleCalendar\SimpleCalendar\obj\Debug\net6.0-windows10.0.17763.0\refint\SimpleCalendar.dll
+J:\Uni\Random Programming Stuff\C# app tutorial\SimpleCalendar\SimpleCalendar\obj\Debug\net6.0-windows10.0.17763.0\SimpleCalendar.dll
+J:\Uni\Random Programming Stuff\C# app tutorial\SimpleCalendar\SimpleCalendar\obj\Debug\net6.0-windows10.0.17763.0\SimpleCalendar.pdb
+J:\Uni\Random Programming Stuff\C# app tutorial\SimpleCalendar\SimpleCalendar\obj\Debug\net6.0-windows10.0.17763.0\ref\SimpleCalendar.dll
